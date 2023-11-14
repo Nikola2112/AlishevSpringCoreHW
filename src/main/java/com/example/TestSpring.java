@@ -1,4 +1,4 @@
-package com.example.demo.springcourse;
+package com.example;
 
 import java.util.Arrays;
 import java.util.List;

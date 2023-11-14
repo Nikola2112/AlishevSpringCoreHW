@@ -1,4 +1,4 @@
-package com.example.demo.springcourse;
+package com.example;
 
 public enum MusicGenre{
     CLASSICAL(new ClassicalMusic()),
