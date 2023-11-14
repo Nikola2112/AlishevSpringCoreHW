@@ -1,6 +1,7 @@
 package com.example.demo.springcourse;
 
 public enum MusicGenre{
-    Classical,
-    Rock
+    CLASSICAL,
+    ROCK,
+    POP
 }

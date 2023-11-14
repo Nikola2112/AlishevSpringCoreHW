@@ -1,27 +1,27 @@
 package com.example.demo.springcourse;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Random;
 
 
 @Component
 public class MusicPlayer {
-    private final ClassicalMusic classicalMusic;
-    private final RockMusic rockMusic;
+    private List<MusicGenre> musicGenres;
 
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(List<MusicGenre> musicGenres) {
+        this.musicGenres = musicGenres;
     }
 
-    public void playMusic(MusicGenre genre) {
-        if (genre == MusicGenre.Classical) {
-            System.out.println("Playing Classical Music: " + classicalMusic.getSong());
-        } else if (genre == MusicGenre.Rock) {
-            System.out.println("Playing Rock Music: " + rockMusic.getSong());
-        } else {
-            System.out.println("Unsupported music genre");
+    public void playMusic() {
+        if (musicGenres.isEmpty()) {
+            System.out.println("No music genres available");
+            return;
         }
+        Random random = new Random();
+        MusicGenre randomGenre = musicGenres.get(random.nextInt(musicGenres.size()));
+        System.out.println("Playing music from genre: " + randomGenre);
     }
 }

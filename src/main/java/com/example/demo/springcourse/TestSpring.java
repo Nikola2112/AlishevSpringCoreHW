@@ -1,11 +1,15 @@
 package com.example.demo.springcourse;
 
+import java.util.Arrays;
+import java.util.List;
+
+
 public class TestSpring {
     public static void main(String[] args) {
-        MusicPlayer musicPlayer = new MusicPlayer(new ClassicalMusic(), new RockMusic());
-
-        musicPlayer.playMusic(MusicGenre.Classical);
-        musicPlayer.playMusic(MusicGenre.Rock);
+         List<MusicGenre> musicGenres = Arrays.asList(MusicGenre.CLASSICAL, MusicGenre.ROCK, MusicGenre.POP);
+        MusicPlayer musicPlayer = new MusicPlayer(musicGenres);
+        musicPlayer.playMusic();
     }
 }
+
 
