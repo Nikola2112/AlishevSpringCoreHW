@@ -16,12 +16,14 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        if (musicGenres.isEmpty()) {
+        if (musicGenres == null || musicGenres.isEmpty()) {
             System.out.println("No music genres available");
             return;
         }
+
         Random random = new Random();
         MusicGenre randomGenre = musicGenres.get(random.nextInt(musicGenres.size()));
-        System.out.println("Playing music from genre: " + randomGenre);
+        Music randomMusic = randomGenre.getMusic();
+        System.out.println("Playing music from genre: " + randomGenre + "-" + randomMusic.getSong());
     }
 }
